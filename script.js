@@ -68,3 +68,75 @@ window.onload = () => {
   if (entries.length) console.log(`Loaded ${entries.length} entries`);
 };
 
+/* === INTERACTIVE CALENDAR === */
+let calendar;
+let selectedDate = null;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const calendarEl = document.getElementById("calendarContainer");
+
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+    height: "auto",
+    themeSystem: "standard",
+    headerToolbar: {
+      left: "prev,next today",
+      center: "title",
+      right: "",
+    },
+    dateClick: function (info) {
+      selectedDate = info.dateStr;
+      document.getElementById("eventModal").style.display = "flex";
+    },
+    events: loadEvents(),
+  });
+
+  calendar.render();
+});
+
+/* Save Event to localStorage */
+function saveEvent() {
+  const title = document.getElementById("eventTitle").value.trim();
+  const type = document.getElementById("eventType").value;
+  if (!title) {
+    alert("Please enter an event name!");
+    return;
+  }
+
+  const newEvent = {
+    title: `${title}`,
+    start: selectedDate,
+    backgroundColor:
+      type === "Birthday" ? "#ff7f50" : type === "Reminder" ? "#ffd700" : "#00adb5",
+  };
+
+  // Save to localStorage
+  const events = loadEvents();
+  events.push(newEvent);
+  localStorage.setItem("calendarEvents", JSON.stringify(events));
+
+  calendar.addEvent(newEvent);
+  closeModal();
+}
+
+/* Load events from localStorage */
+function loadEvents() {
+  const events = JSON.parse(localStorage.getItem("calendarEvents")) || [];
+  return events;
+}
+
+/* Close Modal */
+function closeModal() {
+  document.getElementById("eventModal").style.display = "none";
+  document.getElementById("eventTitle").value = "";
+}
+
+/* Close modal when clicking outside */
+window.onclick = function (event) {
+  const modal = document.getElementById("eventModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+
