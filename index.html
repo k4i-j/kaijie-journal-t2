@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaijie Life OS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🔐 LOCK SCREEN -->
+  <div id="lockScreen" class="lock-screen">
+    <h2>🔒 Enter Password to Continue</h2>
+    <input type="password" id="passwordInput" placeholder="Enter your password..." />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="lockMsg"></p>
+  </div>
+
+  <!-- 🌟 HEADER -->
+  <header>
+    <h1>Kaijie Life OS</h1>
+    <p>Your personal space — track your mood, thoughts, and progress.</p>
+  </header>
+
+  <!-- 🏠 MAIN MENU -->
+  <div class="grid" id="menu">
+    <div class="tile" onclick="showSection('daily')">📓 Daily Log</div>
+    <div class="tile" onclick="showSection('savings')">💰 Savings</div>
+    <div class="tile" onclick="showSection('lifeGoals')">🎯 Life Goals</div>
+    <div class="tile" onclick="showSection('pastLife')">🕰️ Past Life</div>
+    <div class="tile" onclick="showSection('stats')">📊 Statistics</div>
+    <div class="tile" onclick="showSection('calendar')">📅 Calendar</div>
+    <div class="tile" onclick="showSection('notes')">📝 Notes</div>
+    <div class="tile" onclick="showSection('musicMood')">🎧 Music Mood</div>
+    <div class="tile" onclick="showSection('settings')">⚙️ Settings</div>
+  </div>
+
+  <!-- 🧠 DAILY LOG -->
+  <div id="daily" class="section">
+    <h2>📓 Daily Log</h2>
+    <button class="backBtn" onclick="showMenu()">← Back to Menu</button>
+
+    <div class="mood-section">
+      <h3>How are you feeling today?</h3>
+      <select id="mood">
+        <option value="">Select a mood</option>
+        <option value="😊">😊 Happy</option>
+        <option value="😐">😐 Neutral</option>
+        <option value="😢">😢 Sad</option>
+        <option value="😡">😡 Angry</option>
+        <option value="😴">😴 Tired</option>
+        <option value="🤩">🤩 Excited</option>
+      </select>
+
+      <h3>Daily Highlight</h3>
+      <textarea id="highlight" rows="5" placeholder="Write about your day..."></textarea>
+      <button onclick="saveEntry()">Save Entry</button>
+      <p id="savedMsg" style="display:none; margin-top:1rem; color:#00adb5;">Entry saved ✅</p>
+    </div>
+  </div>
+
+  <!-- 💰 SAVINGS -->
+  <div id="savings" class="section">
+    <h2>💰 Savings</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 🎯 LIFE GOALS -->
+  <div id="lifeGoals" class="section">
+    <h2>🎯 Life Goals</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 🕰️ PAST LIFE -->
+  <div id="pastLife" class="section">
+    <h2>🕰️ Past Life</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 📊 STATISTICS -->
+  <div id="stats" class="section">
+    <h2>📊 Statistics</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 📅 CALENDAR -->
+  <div id="calendar" class="section">
+    <h2>📅 Calendar</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 📝 NOTES -->
+  <div id="notes" class="section">
+    <h2>📝 Notes</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- 🎧 MUSIC MOOD -->
+  <div id="musicMood" class="section">
+    <h2>🎧 Music Mood</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <!-- ⚙️ SETTINGS -->
+  <div id="settings" class="section">
+    <h2>⚙️ Settings</h2>
+    <button class="backBtn" onclick="showMenu()">← Back</button>
+    <p>Coming soon...</p>
+  </div>
+
+  <footer>
+    <p>Made by Kaijie ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
