@@ -92,7 +92,23 @@
   <div id="calendar" class="section">
     <h2>📅 Calendar</h2>
     <button class="backBtn" onclick="showMenu()">← Back</button>
-    <p>Coming soon...</p>
+    
+    <div id="calendarContainer"></div>
+
+    <!-- Modal for adding events -->
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <h3>Add Event</h3>
+        <input type="text" id="eventTitle" placeholder="Event name (e.g. Chloe's Birthday 🎂)" />
+        <select id="eventType">
+          <option value="Birthday">🎂 Birthday</option>
+          <option value="Event">📅 Event</option>
+          <option value="Reminder">🔔 Reminder</option>
+        </select>
+        <button onclick="saveEvent()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
   </div>
 
   <!-- 🎧 MUSIC MOOD -->
@@ -116,5 +132,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
