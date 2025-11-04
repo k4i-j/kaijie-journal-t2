@@ -1,5 +1,5 @@
 /* === PASSWORD SYSTEM === */
-const PASSWORD = "kaijie123"; // Change this to your password
+const PASSWORD = "112";
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value.trim();
@@ -67,3 +67,4 @@ window.onload = () => {
   const entries = JSON.parse(localStorage.getItem("entries")) || [];
   if (entries.length) console.log(`Loaded ${entries.length} entries`);
 };
+
