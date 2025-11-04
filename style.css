@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1b1b1b);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.5s ease;
+}
+
+header { text-align: center; margin-top: 2rem; padding: 0 1rem; }
+h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
+header p { font-size: 1rem; opacity: 0.7; }
+
+/* === GRID MENU === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.tile {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+.tile:hover { background: #292929; transform: scale(1.05); border-color: #00adb5; }
+
+/* === SECTIONS === */
+.section {
+  display: none;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.backBtn {
+  background: #00adb5;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.backBtn:hover { background: #00c9d1; }
+
+/* === MOOD SECTION === */
+.mood-section {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+select, textarea, button {
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+select, textarea { width: 100%; background: #181818; color: #fff; }
+textarea { resize: vertical; min-height: 120px; }
+
+button {
+  background: #00adb5;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: 0.2s;
+}
+button:hover { background: #00c9d1; transform: scale(1.02); }
+
+footer { margin-top: auto; padding: 1rem; font-size: 0.9rem; opacity: 0.6; text-align: center; }
+
+/* === LOCK SCREEN === */
+.lock-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #0d0d0d, #1b1b1b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #fff;
+}
+
+.lock-screen input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  background: #181818;
+  color: white;
+  width: 250px;
+  text-align: center;
+}
+
+.lock-screen button {
+  margin-top: 1rem;
+  background: #00adb5;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.lock-screen button:hover { background: #00c9d1; transform: scale(1.05); }
+#lockMsg { color: #ff4b4b; margin-top: 0.5rem; }
